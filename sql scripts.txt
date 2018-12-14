@@ -1,0 +1,44 @@
+CREATE TABLE documents (
+    documentID int(12) not null AUTO_INCREMENT PRIMARY KEY,
+    userID int(11) not null,
+    roomID int(11) not null,
+    checkIn DATE not null,
+    checkOut DATE not null,
+    price int(11) not null
+);
+
+CREATE TABLE rooms (
+    roomID int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    roomName varchar(256) not null,
+    roomSize int(1) not null,
+    roomPrice int(3) not null,
+    roomPictureURL TEXT not null,
+    enabled bit(1) DEFAULT 1
+);
+
+CREATE TABLE rooms_users (
+    reservationID int(12) not null AUTO_INCREMENT PRIMARY KEY,
+    roomID int(11) not null,
+    userID int(11) not null,
+    checkIn DATE not null,
+    checkOut DATE not null
+);
+
+CREATE TABLE toverify_rooms_users (
+    verifyID int(12) not null AUTO_INCREMENT PRIMARY KEY,
+    roomID int(11) not null,
+    userID int(11) not null,
+    checkIn DATE not null,
+    checkOut DATE not null
+);
+
+CREATE TABLE users (
+    userID int(11) not null AUTO_INCREMENT PRIMARY KEY,
+    userName varchar(256) not null,
+    userSurname varchar(256) not null,
+    userEmail varchar(256) not null,
+    userPassword varchar(256) not null,
+    userPhoneNumber varchar(256) not null,
+    roleName varchar(256) not null,
+    enabled bit(1) DEFAULT 1
+);
