@@ -4,7 +4,7 @@
 
 <section class="main-container">
 	<div class="main-wrapper">
-		<h2>Verify Reservation</h2>
+		<h2>Patvirtinti rezervaciją</h2>
 		<?php
 			if (isset($_SESSION['userID'])) {
 				$name =  $_SESSION['userName'];
