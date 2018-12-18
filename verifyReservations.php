@@ -4,7 +4,7 @@
 
 <section class="main-container" onload="sortTable()">
 	<div class="main-wrapper">
-		<h2>Verify Reservations</h2>
+		<h2>Patvirtinti rezervacijas</h2>
 		<?php
 			if ($_SESSION['userRole'] == 'Admin' || $_SESSION['userRole'] == 'Controller' || $_SESSION['userRole'] == 'Junior' ) {
 				$name =  $_SESSION['userName'];
