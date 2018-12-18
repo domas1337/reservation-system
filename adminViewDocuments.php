@@ -8,21 +8,21 @@
 
 				include_once 'includes/dbh.inc.php';
 
-				echo '<h2>Documents</h2>';
+				echo '<h2>Dokumentai</h2>';
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				$sql = "SELECT * FROM documents";
 				$result = mysqli_query($conn, $sql);
 				echo '<table class="users-table" name="documentsTable">
 					<tr class="header" name="header">
-						<th>Room ID</th>
-						<th>User ID</th>
-						<th>Check In</th>
-						<th>Check Out</th>
-						<th>Price</th>
+						<th>Kambario ID</th>
+						<th>Vartotojo ID</th>
+						<th>Registracija</th>
+						<th>Išvykimas</th>
+						<th>Kaina</th>
 				</tr>';
 				if (mysqli_num_rows($result) > 0) {
 					while ($row = $result->fetch_assoc()) {
