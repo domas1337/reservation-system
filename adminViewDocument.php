@@ -4,7 +4,7 @@
 
 <section class="main-container">
 	<div class="main-wrapper">
-		<h2>Document</h2>
+		<h2>Dokumentas</h2>
 		<?php
 			if ($_SESSION['userRole'] == 'Admin' || $_SESSION['userRole'] == 'Controller') {
 				$name =  $_SESSION['userName'];
