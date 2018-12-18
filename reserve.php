@@ -10,9 +10,9 @@
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 			} else
-				echo "You must login to reserve!";
+				echo "Norint rezervuoti, privaloma prisijungti!";
 
 			include_once 'includes/dbh.inc.php';
 
@@ -21,10 +21,10 @@
 			if (mysqli_num_rows($result) > 0) {
 				echo '<table class="users-table" name="usersTable">
 					<tr class="header" name="header">
-						<th>Image</th>
-						<th>Name</th>
-						<th>Size</th>
-						<th>Price</th>
+						<th>Paveikslėlis</th>
+						<th>Pavadinimas</th>
+						<th>Dydis</th>
+						<th>Kaina</th>
 				</tr>';
 				while ($row = $result->fetch_assoc()) {
 					echo '<tr class="clickable-row" data-href="selectedReservation.php?id='.$row['roomID'].'">
