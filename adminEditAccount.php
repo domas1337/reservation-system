@@ -8,12 +8,12 @@
 
 				include_once 'includes/dbh.inc.php';
 
-				echo '<h2>Edit account</h2>';
+				echo '<h2>Redaguoti paskyrą</h2>';
 
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				$id = $_GET['id'];
 
@@ -60,22 +60,22 @@
 					else
 						$disabled = '';
 					echo '<form class="signup-form" action="includes/adminEditAccount.inc.php?id='.$id.'" method="POST">
-						<input type="text" name="userName" placeholder="Name" value="'.$row['userName'].'">
-						<input type="text" name="userSurname" placeholder="Surname" value="'.$row['userSurname'].'">
-						<input type="text" name="userEmail" placeholder="E-mail" value="'.$row['userEmail'].'">
-						<input type="text" name="userPhoneNumber" placeholder="(+123) 123 12345" value="'.$row['userPhoneNumber'].'">
-						<input type="password" name="userNewPassword" placeholder="New password (Optional)">
+						<input type="text" name="userName" placeholder="Vardas" value="'.$row['userName'].'">
+						<input type="text" name="userSurname" placeholder="Pavardė" value="'.$row['userSurname'].'">
+						<input type="text" name="userEmail" placeholder="Elektroninis paštas" value="'.$row['userEmail'].'">
+						<input type="text" name="userPhoneNumber" placeholder="(+370) 623 12345" value="'.$row['userPhoneNumber'].'">
+						<input type="password" name="userNewPassword" placeholder="Naujas slaptažodis (Neprivaloma)">
 						<select name="userRole">
-							<option value="Guest"'.$guest.'>Guest</option>
-							<option value="Junior"'.$junior.'>Junior</option>
-							<option value="Controller"'.$controller.'>Controller</option>
-							<option value="Admin"'.$admin.'>Admin</option>
+							<option value="Guest"'.$guest.'>Svečias</option>
+							<option value="Junior"'.$junior.'>Jaunesnysis</option>
+							<option value="Controller"'.$controller.'>Valdytojas</option>
+							<option value="Admin"'.$admin.'>Administratorius</option>
 						</select>
 						<select name="enabled">
-							<option value="Enabled"'.$enabled.'>Enabled</option>
-							<option value="Disabled"'.$disabled.'>Disabled</option>
+							<option value="Enabled"'.$enabled.'>Įjungtas</option>
+							<option value="Disabled"'.$disabled.'>Išjungtas</option>
 						</select>
-						<button type="submit" name="submit">Confirm</button>
+						<button type="submit" name="submit">Patvirtinti</button>
 					</form>';
 				}
 			} else
