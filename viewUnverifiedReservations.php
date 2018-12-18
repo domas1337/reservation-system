@@ -10,7 +10,7 @@
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				include_once 'includes/dbh.inc.php';
 
@@ -34,10 +34,10 @@
 				if (mysqli_num_rows($result) > 0) {
 					echo '<table class="users-table" name="usersTable">
 						<tr class="header" name="header">
-							<th>RoomID</th>
-							<th>CheckIn</th>
-							<th>CheckOut</th>
-							<th>Price</th>
+							<th>Kambario ID</th>
+							<th>Registracija</th>
+							<th>Išvykimas</th>
+							<th>Kaina</th>
 					</tr>';
 					while ($row = $result->fetch_assoc()) {
 						//Created a template
@@ -67,7 +67,7 @@
 						</tr>';
 					}
 				} else
-					echo '<p>No unverified reservations</p>';
+					echo '<p>Nėra nepatvirtintų rezervacijų</p>';
 			} else
 				header("Location: index.php");
 		?>
