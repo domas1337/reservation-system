@@ -91,7 +91,7 @@
 									<input type="password" name="userPassword" placehorlder="Slaptažodis">
 									<button type="submit" name="submit">Prisijungti</button>
 									</form>
-								<a href="signup.php">Sign up</a>';
+								<a href="signup.php">Registruotis</a>';
 						?>
 					</div>
 				</div>
