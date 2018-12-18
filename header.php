@@ -17,7 +17,7 @@
 				<div class="main-wrapper">
 					<ul>
 						<li><a href="index.php">Pagrindinis</a></li>
-						<li><a href="reserve.php">Rezervacija</a></li>
+						<li><a href="reserve.php">Rezervuoti</a></li>
 					</ul>
 					<div class="nav-login">
 						<?php
