@@ -10,7 +10,7 @@
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				include_once 'includes/dbh.inc.php';
 
@@ -34,10 +34,10 @@
 				if (mysqli_num_rows($result) > 0) {
 					echo '<table class="documents-table" name="documents">
 						<tr class="header" name="header">
-							<th>RoomID</th>
-							<th>CheckIn</th>
-							<th>CheckOut</th>
-							<th>Price</th>
+							<th>Kambario ID</th>
+							<th>Registracija</th>
+							<th>Išvykimas</th>
+							<th>Kaina</th>
 					</tr>';
 					while ($row = $result->fetch_assoc()) {
 						echo '<tr class="documents-row" data-href="selectedReservation.php?id='.$row['roomID'].'">
@@ -48,7 +48,7 @@
 						</tr>';
 					}
 				} else
-					echo '<p>No documents</p>';
+					echo '<p>Nėra dokumentų</p>';
 			} else
 				header("Location: index.php");
 		?>

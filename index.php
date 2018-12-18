@@ -10,7 +10,7 @@
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 			}
 		?>
 	</div>

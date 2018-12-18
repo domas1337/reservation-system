@@ -10,7 +10,7 @@
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				include_once 'includes/dbh.inc.php';
 
@@ -91,20 +91,20 @@
 					if ($rowRoom = $resultRoom->fetch_assoc()) {
 						$price = $rowRoom['roomPrice'] * $days;
 						if ($rowUser = $resultUser->fetch_assoc()) {
-							echo '<p>For user: '.$rowUser['userName'].' '.$rowUser['userSurname'].'</p>
+							echo '<p>Vartotojui: '.$rowUser['userName'].' '.$rowUser['userSurname'].'</p>
 								<form class="reservation-form" action="includes/confirmReservation.inc.php?roomID='.$roomID.'&userID='.$userID.'&checkIn='.$checkIn.'&checkOut='.$checkOut.'" method="POST">
-								<p>Room Name</p>
-								<input type="text" name="roomName" placeholder="Room Name" value="'.$rowRoom['roomName'].'" readonly="readonly">
-								<p>Room Size</p>
-								<input type="text" name="roomSize" placeholder="Room Size" value="'.$rowRoom['roomSize'].'" readonly="readonly">
-								<p>Room Price (€'.$rowRoom['roomPrice'].' per night)</p>
-								<input type="text" name="roomPrice" placeholder="Room Price" value="€'.$price.'" readonly="readonly">
-								<p>Check-In Date</p>
+								<p>Kambario pavadinimas</p>
+								<input type="text" name="roomName" placeholder="Kambario pavadinimas" value="'.$rowRoom['roomName'].'" readonly="readonly">
+								<p>Kambario dydis</p>
+								<input type="text" name="roomSize" placeholder="Kambario dydis" value="'.$rowRoom['roomSize'].'" readonly="readonly">
+								<p>Kambario kaina (€'.$rowRoom['roomPrice'].' už naktį)</p>
+								<input type="text" name="roomPrice" placeholder="Kambario kaina" value="€'.$price.'" readonly="readonly">
+								<p>Registracijos data</p>
 								<input type="date" id="checkIn" name="checkIn" value="'.date('Y-m-d').'" readonly="readonly">
-								<p>Check-Out Date</p>
+								<p>Išvykimo data</p>
 								<input type="date" id="checkOut" name="checkOut" value="'.date("Y-m-d", strtotime('tomorrow')).'" readonly="readonly">
 								<img src="'.$rowRoom['roomPictureURL'].'">
-								<button type="submit" name="submit">Confirm reservation</button>
+								<button type="submit" name="submit">Patvirtinti rezervaciją</button>
 							</form>';
 						}
 					}
