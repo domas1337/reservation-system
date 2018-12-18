@@ -70,26 +70,26 @@
 
 								if ($_SESSION['userRole'] == 'Admin')
 									echo '<form><a name="adminSettings" href="adminSettings.php">
-										Admin Settings</a></form>
+										Administratoriaus parametrai</a></form>
 									';
 								if ($_SESSION['userRole'] == 'Admin' || $_SESSION['userRole'] == 'Controller' || $_SESSION['userRole'] == 'Junior')
 									echo '<form class="menus"><a name="verifyReservations" href="verifyReservations.php">
-										Verify Reservations</a></form>
+										Patvirtinti rezervacijas</a></form>
 									';
 								if ($_SESSION['userRole'] == 'Controller')
 									echo '<form class="menus"><a name="verifyReservations" href="adminViewDocuments.php">
-										View Documents</a></form>';
+										Peržiūrėti dokumentus</a></form>';
 								echo '<form class="menus"><a href="myAccount.php" name="myAccount">
-									My Account
+									Mano paskyra
 								</a></form>';
 								echo '<form action="includes/logout.inc.php" method="POST">
-									<button type="submit" name="submit">Logout</button>
+									<button type="submit" name="submit">Atsijungti</button>
 								</form>';
 							} else
 								echo '<form action="includes/login.inc.php" method="POST">
-									<input type="text" name="userEmail" placehorlder="E-mail">
-									<input type="password" name="userPassword" placehorlder="password">
-									<button type="submit" name="submit">Login</button>
+									<input type="text" name="userEmail" placehorlder="Elektroninis paštas">
+									<input type="password" name="userPassword" placehorlder="Slaptažodis">
+									<button type="submit" name="submit">Prisijungti</button>
 									</form>
 								<a href="signup.php">Sign up</a>';
 						?>
