@@ -8,19 +8,19 @@
 
 				include_once 'includes/dbh.inc.php';
 
-				echo '<h2>Select account</h2>';
+				echo '<h2>Pasirinkite paskyrą</h2>';
 				$name =  $_SESSION['userName'];
 				$surname = $_SESSION['userSurname'];
 				$role = $_SESSION['userRole'];
-				echo '<p>Logged in as '.$name.' '.$surname.'. Role: '.$role.'</p>';
+				echo '<p>Prisijungta kaip '.$name.' '.$surname.'. Rolė: '.$role.'</p>';
 
 				$sql = "SELECT * FROM users";
 				$result = mysqli_query($conn, $sql);
 				echo '<table class="users-table" name="usersTable">
 					<tr class="header" name="header">
-						<th>Name</th>
-						<th>Surname</th>
-						<th>E-mail</th>
+						<th>Vardas</th>
+						<th>Pavardė</th>
+						<th>Elektroninis paštas</th>
 				</tr>';
 				if (mysqli_num_rows($result) > 0) {
 					while ($row = $result->fetch_assoc()) {
